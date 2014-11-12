@@ -1,0 +1,128 @@
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+.center{
+  width: 55%!important;
+}
+html, body{height:100%; margin:0;padding:0;background-color: #f5f5f5;}
+.center-block
+{
+  float: none;
+}
+.logo-center{padding-left:10%;}
+.alert-center{margin-left:2%;}
+.container-fluid{
+  height:100%;
+  display:table;
+  width: 100%;
+  padding: 1px;
+}
+.container-navbar{height:auto;}
+.row-fluid {height: auto; display:table-cell; vertical-align: middle;}
+
+.add-form{width: 30%;}
+.login-form{padding-left: 30%;padding-top: 50%;}
+.newinput{width: 50%;}
+.body, .table-body{margin-bottom: 0.1%;}
+.right-transform{float: right;}
+.glyphicon-cars{content: url(../img/glyphicons/glyphicons_028_cars.png); width: 20%;}
+.glyphicon-moon{content: url(../img/glyphicons/glyphicons_230_moon.png); width: 13%;}
+.right-transformicon{margin-left: 7%;}
+.right-transformicon-logo{margin-left: 11%;}
+
+.centering {
+  float:none;
+  margin:0 auto;
+}
+.control-label
+{
+  margin-right: 1px;
+}
+.table-nonfluid {
+  	width: 90%!important;
+  	margin: 0 auto !important;
+  	float: none !important;
+}
+.table-iconcell{
+	width: 30px;
+	text-align:center;
+}
+.table-usuarios{
+	float:none;
+}
+.table-servidores{
+	font-weight: bold;
+}
+.msg-logado{
+	height: 300px!important;
+}
+.red, .green{
+	font-size: 20px;
+}
+.direita
+{
+  position: relative!important;
+  float: right!important;
+}
+.logo{
+  float: none;
+  width: 75%;
+}
+.btn_novo{
+  margin-left: 100%!important;
+}
+.btn-novo-add{
+  margin-left: 49%!important;
+}
+.btn_novo_suporte{
+  margin-left: 70%!important;
+  margin-bottom: 7%;
+}
+.validation_error{
+  margin-left: 8%;
+}
+.navbar {margin-bottom: 0;}
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {margin-left: 0px;}
+.navbar-nav.navbar-right:last-child {margin-right: 0px;}
+.container_index{width: auto;padding: 0px;}
+.server_show{width: 36%;height: auto;}
+.table-nonfluid_index{width: 60%!important;
+margin: 0 auto !important;
+float: left !important;
+}
+.img-jogos{width: 100%;
+  height: auto;
+display: inline-block;
+padding-left: 20%;
+padding-top: 4%;
+padding-bottom: 4%;}
+.img-jogos img:hover{border-style:solid; ;border-color: blue;}
+.ok-corpo{width: 100%;padding-left: 2%;font-size: 18px;}
+.form_suporte{width: 100%;
+margin-left: 10%;
+margin-top: 4%;}
+
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content:"\2212";  /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: grey;         /* adjust as needed */
+    opacity: 0.7;
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content:"\2b";  /* adjust as needed, taken from bootstrap.css */
+}
+.form-login{
+  width: 28%;
+vertical-align: middle;
+float: none;
+margin-left: 27%;
+}
+.btn-novo-login{
+  margin-left: 50%!important;
+}
+h3, .h3 {
+font-size: 1.7em;
+}
