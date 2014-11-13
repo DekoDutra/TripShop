@@ -14,23 +14,35 @@
 
 	  }
 
+    function selecionamodel($id = null)
+    {
+
+     if ($id != null) {
+       $this->db->where("id", $id);
+     }
+
+     $this->db->order_by("id");
+     return $this->db->get("usuarios");
+
+     }
+
    function salvar($id = null, $dados = null){
 
-		if ($this->db->where("id", $id)->update("admin", $dados))
+		if ($this->db->where("id", $id)->update("usuarios", $dados))
 			return true;
 		else
 			return false;
 	 }
    function novo($dados = null){
 
-    if ($this->db->insert("admin", $dados))
+    if ($this->db->insert("usuarios", $dados))
       return true;
     else
       return false;
    }
    public function deletar($id = null){
 
-		if ($this->db->where("id", $id)->delete("admin"))
+		if ($this->db->where("id", $id)->delete("usuarios"))
 			return true;
 		else
 			return false;

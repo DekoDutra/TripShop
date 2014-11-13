@@ -21,14 +21,18 @@
 	     * usando jSon.
 	     */
     	function carregaDadosJSon(id){
-    		$.post(base_url+'admin/users_admin/dados', {
+    		$.post(base_url+'admin/usuarios/dados', {
     			'id': id,
           '<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>'
     		}, function (data){
-    			$('#usuario').val(data.usuario);
+          $('#name').val(data.nome);
+          $('#sobrenome').val(data.sobrenome);
+          $('#telefone').val(data.telefone);
     			$('#email').val(data.email);
-          $('#tipo_usuario').val(data.tipo_usuario);
-          $('#ativo').val(data.ativo);
+          $('#logradouro').val(data.logradouro);
+          $('#cep').val(data.cep);
+          $('#rg').val(data.rg);
+          $('#cpf').val(data.cpf);
     			$('#id').val(data.id);//aqui eu seto a o input hidden com o id do cliente, para que a edição funcione. Em cada tela aberta, eu seto o id do cliente.
     		}, 'json');
     	}
@@ -43,7 +47,7 @@
 
       function deletar(id){
 
-            $.post(base_url+'admin/users_admin/deletar', {
+            $.post(base_url+'admin/usuarios/deletar', {
                 id: id,
                 '<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>'
             }, function (data){
@@ -57,7 +61,7 @@
   <blockquote>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
     <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    <a href="/tripshop/adicionar/cadastrar_admin">Novo Usuario <span class="glyphicon glyphicon-plus"></span></a>
+    <a href="/tripshop/adicionar/cadastrar_usuario">Novo Usuario <span class="glyphicon glyphicon-plus"></span></a>
   </blockquote>
     <table class="table table-striped table-fluid ">
                 <tr>
@@ -101,40 +105,47 @@
 	      </div>
 	      <div class="modal-body">
           <?php
-          $options = array(
-                  '1'  => 'Usuario',
-                  '2'    => 'Vendedor',
-                  '3'   => 'Desenvolvedor',
-                );
-          $options2 = array(
-                  '1'  => 'Sim',
-                  '0'    => 'Não',
-                );
             $attributes = array('class'=>"form-horizontal",'role' => 'form', 'id' => 'formulario_editnew', 'method' => 'POST');
             $inputs = 'class="form-control"';
             $labels = array('class' => 'col-sm-2' );
             $submitbtn = 'class = "btn btn-default btn_novo"';
-            echo form_open('admin/users_admin/salvar', $attributes);
+            echo form_open('admin/usuarios/salvar', $attributes);
             ?><div class="form-group"><?
-            echo form_label("Usuario: ", 'usuario', $labels);
+            echo form_label("Nome: ", 'nome', $labels);
             ?><div class="col-sm-10"><?
-            echo form_input('usuario', '', 'id="usuario", class="form-control"');
+            echo form_input('nome', '', 'id="name" class="form-control"');
+            ?></div></div><div class="form-group"><?
+            echo form_label("Sobrenome: ", 'sobrenome', $labels);
+            ?><div class="col-sm-10"><?
+            echo form_input('sobrenome', '', 'id="sobrenome" class="form-control"');
+            ?></div></div><div class="form-group"><?
+            echo form_label("Telefone: ", 'telefone', $labels);
+            ?><div class="col-sm-10"><?
+            echo form_input('telefone', '', 'id="telefone" class="form-control"');
             ?></div></div><div class="form-group"><?
             echo form_label("Email: ", 'email', $labels);
             ?><div class="col-sm-10"><?
-            echo form_email('email', '', 'id="email", class="form-control"');
+            echo form_email('email', '', 'id="email" class="form-control"');
             ?></div></div><div class="form-group"><?
-            echo form_label("Tipo Usuario: ", 'tipo_usuario', $labels);
+            echo form_label("Logradouro: ", 'logradouro', $labels);
             ?><div class="col-sm-10"><?
-            echo form_dropdown('tipo_usuario', $options, 'large', 'class="form-control"');
+            echo form_input('logradouro', '', 'id="logradouro" class="form-control"');
             ?></div></div><div class="form-group"><?
-            echo form_label("Ativo: ", 'ativo', $labels);
+            echo form_label("CEP: ", 'cep', $labels);
             ?><div class="col-sm-10"><?
-            echo form_dropdown('ativo', $options2, 'large', 'class="form-control"');
+            echo form_input('cep', '', 'id="cep" class="form-control"');
+            ?></div></div><div class="form-group"><?
+            echo form_label("RG: ", 'rg', $labels);
+            ?><div class="col-sm-10"><?
+            echo form_input('rg', '', 'id="rg" class="form-control"');
+            ?></div></div><div class="form-group"><?
+            echo form_label("CPF: ", 'cpf', $labels);
+            ?><div class="col-sm-10"><?
+            echo form_input('cpf', '', 'id="cpf" class="form-control"');
             ?></div></div><div class="form-group"><?
             echo form_label("ID: ", 'id', $labels);
             ?><div class="col-sm-10"><?
-            echo form_input('id', '', 'id="id", class="form-control", readonly');
+            echo form_input('id', '', 'id="id" class="form-control" readonly');
             ?></div></div>
             <div class="form-group"><div class="col-sm-offset-2 col-sm-10"><?
             ?></div><?

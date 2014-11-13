@@ -21,41 +21,48 @@ $(function(){
 
 <div class="container add-form">
   <?php
-  $options = array(
-          '1'  => 'Usuario',
-          '2'    => 'Vendedor',
-          '3'   => 'Desenvolvedor',
-        );
-  $options2 = array(
-          '1'  => 'Sim',
-          '0'    => 'Não',
-        );
     $attributes = array('class'=>"form-horizontal",'role' => 'form', 'id' => 'formulario_new', 'method' => 'POST');
     $inputs = 'class="form-control"';
     $labels = array('class' => 'col-sm-2' );
     $submitbtn = 'class = "btn btn-primary btn-lg"';
     $submitbtn2 = 'class = "btn btn-default btn-lg btn-novo-add"';
-    echo form_open('admin/users_admin/novo', $attributes);
+    echo form_open('admin/usuarios/novo', $attributes);
     ?><div class="form-group"><?
-    echo form_label("Usuario: ", 'usuario', $labels);
+    echo form_label("Nome: ", 'nome', $labels);
     ?><div class="col-sm-10"><?
-    echo form_input('usuario', '', 'id="usuario", class="form-control"');
+    echo form_input('nome', '', 'id="name" class="form-control"');
+    ?></div></div><div class="form-group"><?
+    echo form_label("Sobrenome: ", 'sobrenome', $labels);
+    ?><div class="col-sm-10"><?
+    echo form_input('sobrenome', '', 'id="sobrenome" class="form-control"');
     ?></div></div><div class="form-group"><?
     echo form_label("Senha: ", 'senha', $labels);
     ?><div class="col-sm-10"><?
-    echo form_password('senha', '', 'id="senha", class="form-control"');
+    echo form_password('senha', '', 'id="senha" class="form-control"');
+    ?></div></div><div class="form-group"><?
+    echo form_label("Telefone: ", 'telefone', $labels);
+    ?><div class="col-sm-10"><?
+    echo form_input('telefone', '', 'id="telefone" class="form-control"');
     ?></div></div><div class="form-group"><?
     echo form_label("Email: ", 'email', $labels);
     ?><div class="col-sm-10"><?
-    echo form_email('email', '', 'id="email", class="form-control"');
+    echo form_email('email', '', 'id="email" class="form-control"');
     ?></div></div><div class="form-group"><?
-    echo form_label("Tipo Usuario: ", 'tipo_usuario', $labels);
+    echo form_label("Logradouro: ", 'logradouro', $labels);
     ?><div class="col-sm-10"><?
-    echo form_dropdown('tipo_usuario', $options, 'large', 'class="form-control"');
+    echo form_input('logradouro', '', 'id="logradouro" class="form-control"');
     ?></div></div><div class="form-group"><?
-    echo form_label("Ativo: ", 'ativo', $labels);
+    echo form_label("CEP: ", 'cep', $labels);
     ?><div class="col-sm-10"><?
-    echo form_dropdown('ativo', $options2, 'large', 'class="form-control"');
+    echo form_input('cep', '', 'id="cep" class="form-control"');
+    ?></div></div><div class="form-group"><?
+    echo form_label("RG: ", 'rg', $labels);
+    ?><div class="col-sm-10"><?
+    echo form_input('rg', '', 'id="rg" class="form-control"');
+    ?></div></div><div class="form-group"><?
+    echo form_label("CPF: ", 'cpf', $labels);
+    ?><div class="col-sm-10"><?
+    echo form_input('cpf', '', 'id="cpf" class="form-control"');
     ?></div></div><div class="form-group"><div class="col-sm-offset-2 col-sm-10"><?
     echo "<br>";
     echo form_submit("","Cancelar", $submitbtn2) . " " . form_submit("","Cadastrar", $submitbtn);

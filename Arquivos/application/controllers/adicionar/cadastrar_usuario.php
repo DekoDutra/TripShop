@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 session_start(); //we need to call PHP's session object to access it through CI
-class Cadastrar_admin extends CI_Controller {
+class Cadastrar_usuario extends CI_Controller {
 
    function __construct()
    {
@@ -18,7 +18,7 @@ class Cadastrar_admin extends CI_Controller {
        $this->load->helper(array('form'));
        $this->load->view('head/head');
        $this->load->view('head/header');
-       $this->load->view('adicionar/adicionar_admin');
+       $this->load->view('adicionar/adicionar_usuarios');
      }
      else
      {
@@ -26,5 +26,5 @@ class Cadastrar_admin extends CI_Controller {
        redirect('admin/login', 'refresh');
      }
    }
-   
+
  }

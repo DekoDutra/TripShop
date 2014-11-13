@@ -36,10 +36,10 @@ class Usuarios extends CI_Controller {
 		$id = $this->input->post("id");
 
 		//carrego o model responsável pelos clientes
-		$this->load->model("admin/admin", "admin");
+		$this->load->model("admin/usuario", "admin");
 
 		//chamo a função clientes() dentro do model que me traz somente os dados de um cliente, pois estou passando o id_cliente como parãmetro
-		$consulta = $this->admin->seleciona($id);
+		$consulta = $this->admin->selecionamodel($id);
 
 		//antes de continuar, verifico se alguma informação foi retornada, para não dar erro.
 		if ($consulta->num_rows() == 0) {
@@ -50,8 +50,14 @@ class Usuarios extends CI_Controller {
 		$array = array(
 
 			"id" => $consulta->row()->id,
-			"usuario" => $consulta->row()->usuario,
-			"email" => $consulta->row()->email
+      "sobrenome" => $consulta->row()->sobrenome,
+      "nome" => $consulta->row()->nome,
+      "telefone" => $consulta->row()->telefone,
+			"email" => $consulta->row()->email,
+      "logradouro" => $consulta->row()->logradouro,
+      "cep" => $consulta->row()->cep,
+      "rg" => $consulta->row()->rg,
+      "cpf" => $consulta->row()->cpf
 
 		);
 
@@ -69,22 +75,30 @@ class Usuarios extends CI_Controller {
 	public function salvar()
 	{
 		//Carrego o model clientes
-		$this->load->model("admin/admin", "admin");
+		$this->load->model("admin/usuario", "admin");
 
 		$id = $this->input->post("id");
-		$usuario= $this->input->post("usuario");
+		$nome= $this->input->post("nome");
+    $sobrenome= $this->input->post("sobrenome");
+    $telefone= $this->input->post("telefone");
 		$email = $this->input->post("email");
-    $tipo_usuario = $this->input->post("tipo_usuario");
-    $ativo = $this->input->post("ativo");
+    $logradouro= $this->input->post("logradouro");
+    $cep= $this->input->post("cep");
+    $rg= $this->input->post("rg");
+    $cpf= $this->input->post("cpf");
 
 
 		//Aqui eu seto cada campo da tabela com seu respectivo valor para o update no model.
 		$dados = array(
 
-			 "usuario" => $usuario,
-       "tipo_usuario" => $tipo_usuario,
-       "ativo" => $ativo,
-       "email" => $email
+			 "nome" => $nome,
+       "sobrenome" => $sobrenome,
+       "telefone" => $telefone,
+       "email" => $email,
+       "logradouro" => $logradouro,
+       "cep" => $cep,
+       "rg" => $rg,
+       "cpf" => $cpf
 
 		);
 
@@ -99,23 +113,32 @@ class Usuarios extends CI_Controller {
   public function novo()
   {
     //Carrego o model clientes
-    $this->load->model("admin/admin", "admin");
+    $this->load->model("admin/usuario", "admin");
 
-    $usuario= $this->input->post("usuario");
     $senha= $this->input->post("senha");
+    $id = $this->input->post("id");
+    $nome= $this->input->post("nome");
+    $sobrenome= $this->input->post("sobrenome");
+    $telefone= $this->input->post("telefone");
     $email = $this->input->post("email");
-    $tipo_usuario = $this->input->post("tipo_usuario");
-    $ativo = $this->input->post("ativo");
+    $logradouro= $this->input->post("logradouro");
+    $cep= $this->input->post("cep");
+    $rg= $this->input->post("rg");
+    $cpf= $this->input->post("cpf");
 
 
     //Aqui eu seto cada campo da tabela com seu respectivo valor para o update no model.
     $dados = array(
 
-       "usuario" => $usuario,
        "senha" => md5($senha),
-       "tipo_usuario" => $tipo_usuario,
-       "ativo" => $ativo,
-       "email" => $email
+       "nome" => $nome,
+       "sobrenome" => $sobrenome,
+       "telefone" => $telefone,
+       "email" => $email,
+       "logradouro" => $logradouro,
+       "cep" => $cep,
+       "rg" => $rg,
+       "cpf" => $cpf
 
     );
 
@@ -130,7 +153,7 @@ class Usuarios extends CI_Controller {
   public function deletar()
 	{
 		//Carrego o model clientes
-		$this->load->model("admin/admin", "admin");
+		$this->load->model("admin/usuario", "admin");
 
 		$id = $this->input->post("id");
 
