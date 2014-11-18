@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 session_start(); //we need to call PHP's session object to access it through CI
-class Users_admin extends CI_Controller {
+class Festas extends CI_Controller {
 
  function __construct()
  {
@@ -15,13 +15,13 @@ class Users_admin extends CI_Controller {
      $session_data = $this->session->userdata('logged_in');
 
      //Seleciona o model
-     $this->load->model("admin/admin", "admin");
+     $this->load->model("admin/festa", "admin");
      //Armazena variaveis no array 'seleciona'
      $dados['seleciona'] = $this->admin->seleciona();
 
      $this->load->view('head/head');
      $this->load->view('head/header');
-     $this->load->view('admin/users_admin', $dados);
+     $this->load->view('admin/festas', $dados);
    }
    else
    {
@@ -36,22 +36,25 @@ class Users_admin extends CI_Controller {
 		$id = $this->input->post("id");
 
 		//carrego o model responsável pelos clientes
-		$this->load->model("admin/admin", "admin");
+		$this->load->model("admin/festa", "admin");
 
 		//chamo a função clientes() dentro do model que me traz somente os dados de um cliente, pois estou passando o id_cliente como parãmetro
-		$consulta = $this->admin->seleciona($id);
+		$consulta = $this->admin->selecionamodel($id);
 
 		//antes de continuar, verifico se alguma informação foi retornada, para não dar erro.
 		if ($consulta->num_rows() == 0) {
-			die("Usuario não encontrado");
+			die("festa não encontrado");
 		}
 
 		//como eu vou retornar os dados para a view em formato jSon, aqui eu crio os índices para serem acessados dentro da função $.post()
 		$array = array(
 
 			"id" => $consulta->row()->id,
-			"usuario" => $consulta->row()->usuario,
-			"email" => $consulta->row()->email
+      "casa" => $consulta->row()->casa,
+      "data" => date("d-m-Y", strtotime($consulta->row()->data)),
+      "hora" => $consulta->row()->hora,
+			"preco" => $consulta->row()->preco,
+      "festa_atracao" => $consulta->row()->festa_atracao,
 
 		);
 
@@ -69,22 +72,24 @@ class Users_admin extends CI_Controller {
 	public function salvar()
 	{
 		//Carrego o model clientes
-		$this->load->model("admin/admin", "admin");
+		$this->load->model("admin/festa", "admin");
 
 		$id = $this->input->post("id");
-		$usuario= $this->input->post("usuario");
-		$email = $this->input->post("email");
-    $tipo_usuario = $this->input->post("tipo_usuario");
-    $ativo = $this->input->post("ativo");
+		$casa= $this->input->post("casa");
+    $data= date("Y-m-d", strtotime($this->input->post("data")));
+    $hora= $this->input->post("hora");
+		$preco = $this->input->post("preco");
+    $festa_atracao= $this->input->post("festa_atracao");
 
 
 		//Aqui eu seto cada campo da tabela com seu respectivo valor para o update no model.
 		$dados = array(
 
-			 "usuario" => $usuario,
-       "tipo_usuario" => $tipo_usuario,
-       "ativo" => $ativo,
-       "email" => $email
+			 "casa" => $casa,
+       "data" => $data,
+       "hora" => $hora,
+       "preco" => $preco,
+       "festa_atracao" => $festa_atracao,
 
 		);
 
@@ -99,23 +104,25 @@ class Users_admin extends CI_Controller {
   public function novo()
   {
     //Carrego o model clientes
-    $this->load->model("admin/admin", "admin");
+    $this->load->model("admin/festa", "admin");
 
-    $usuario= $this->input->post("usuario");
-    $senha= $this->input->post("senha");
-    $email = $this->input->post("email");
-    $tipo_usuario = $this->input->post("tipo_usuario");
-    $ativo = $this->input->post("ativo");
+
+    $id = $this->input->post("id");
+    $casa= $this->input->post("casa");
+    $data= date("Y-m-d", strtotime($this->input->post("data")));
+    $hora= $this->input->post("hora");
+    $preco = $this->input->post("preco");
+    $festa_atracao= $this->input->post("festa_atracao");
 
 
     //Aqui eu seto cada campo da tabela com seu respectivo valor para o update no model.
     $dados = array(
 
-       "usuario" => $usuario,
-       "senha" => md5($senha),
-       "tipo_usuario" => $tipo_usuario,
-       "ativo" => $ativo,
-       "email" => $email
+       "casa" => $casa,
+       "data" => $data,
+       "hora" => $hora,
+       "preco" => $preco,
+       "festa_atracao" => $festa_atracao,
 
     );
 
@@ -130,7 +137,7 @@ class Users_admin extends CI_Controller {
   public function deletar()
 	{
 		//Carrego o model clientes
-		$this->load->model("admin/admin", "admin");
+		$this->load->model("admin/festa", "admin");
 
 		$id = $this->input->post("id");
 
@@ -140,9 +147,9 @@ class Users_admin extends CI_Controller {
 		//Agora eu chamo a função salvar() dentro do model passando o id_cliente e os dados do cliente como parâmetro
 		//Se tiver sucesso, então retorno com o código 1, pois recupero as informações via ajax na view.
 		if ($this->admin->deletar($id))
-			header('Location: admin/users_admin');
+			redirect('admin/users_admin', 'refresh');
 		else
-			header('Location: admin/users_admin');
+			redirect('admin/users_admin', 'refresh');
 	}
 }
 

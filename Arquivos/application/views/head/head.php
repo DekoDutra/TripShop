@@ -16,6 +16,14 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="<?php echo asset_url();?>js/moment.js"></script>
+  <script type="text/javascript" src="<?php echo asset_url();?>js/npm.js"></script>
+  <script type="text/javascript" src="<?php echo asset_url();?>js/jquery.maskMoney.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" media="screen" href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/css/bootstrap-datetimepicker.min.css">
+
+	<script type="text/javascript" src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/src/js/bootstrap-datetimepicker.js"></script>
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 

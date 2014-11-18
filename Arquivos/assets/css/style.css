@@ -9,6 +9,8 @@ html, body{height:100%; margin:0;padding:0;background-color: #f5f5f5;}
 {
   float: none;
 }
+.mostra-cor{height: 30px;
+width: 30px;}
 .logo-center{padding-left:10%;}
 .alert-center{margin-left:2%;}
 .container-fluid{
@@ -17,6 +19,8 @@ html, body{height:100%; margin:0;padding:0;background-color: #f5f5f5;}
   width: 100%;
   padding: 1px;
 }
+.datetimepickernew{width: 81%;
+padding-left: 2.5%!important;}
 .container-navbar{height:auto;}
 .row-fluid {height: auto; display:table-cell; vertical-align: middle;}
 

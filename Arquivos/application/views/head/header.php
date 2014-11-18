@@ -23,17 +23,17 @@
               <li><a href="<?= base_url('admin/usuarios') ?>">Usuarios <span class="glyphicon glyphicon-user right-transform"></span></a></li>
               <li><a href="#">Passagens <span class="glyphicon glyphicon-barcode right-transform"></span></a></li>
               <li><a href="#">Quartos <span class="glyphicon glyphicon-moon right-transform"></span></a></li>
-              <li><a href="#">Festas <span class="glyphicon glyphicon-music right-transform"></span></a></li>
+              <li><a href="#">Tickets <span class="glyphicon glyphicon-music right-transform"></span></a></li>
               <li><a href="#">Carros <span class="glyphicon glyphicon-cars right-transform"></span></a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Açôes do Sistema <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Vôos <span class="glyphicon glyphicon-send right-transform"></span></a></li>
-              <li><a href="#">Festas <span class="glyphicon glyphicon-music right-transform"></span></a></li>
-              <li><a href="#">Hoteis <span class="glyphicon glyphicon-header right-transform"></span></a></li>
-              <li><a href="#">Carros <span class="glyphicon glyphicon-cars right-transform"></span></a></li>
+              <li><a href="<?= base_url('admin/voos') ?>">Vôos <span class="glyphicon glyphicon-send right-transform"></span></a></li>
+              <li><a href="<?= base_url('admin/festas') ?>">Festas <span class="glyphicon glyphicon-music right-transform"></span></a></li>
+              <li><a href="<?= base_url('admin/hoteis') ?>">Hoteis <span class="glyphicon glyphicon-header right-transform"></span></a></li>
+              <li><a href="<?= base_url('admin/carros') ?>">Carros <span class="glyphicon glyphicon-cars right-transform"></span></a></li>
             </ul>
           </li>
         </ul>
