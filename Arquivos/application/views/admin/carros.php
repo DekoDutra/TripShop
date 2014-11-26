@@ -75,7 +75,7 @@
 
   <div class="container-fluid">
   <blockquote>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    <p>Administração de todos os Carros cadastrados!</p>
     <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
     <a href="/tripshop/adicionar/cadastrar_carro">Novo carro <span class="glyphicon glyphicon-plus"></span></a>
   </blockquote>
@@ -125,7 +125,7 @@
             ?></div></div><div class="form-group"><?
             echo form_label("Cor: ", 'cor', $labels);
             ?><div class="col-sm-10"><?
-            echo form_input('cor', '', 'id="cor" class="form-control"');
+            echo form_input('cor', '', 'id="cor" class="color {hash:true}  form-control"');
             ?></div></div><div class="form-group"><?
             echo form_label("Placa: ", 'placa', $labels);
             ?><div class="col-sm-10"><?

@@ -19,6 +19,7 @@
   <script type="text/javascript" src="<?php echo asset_url();?>js/moment.js"></script>
   <script type="text/javascript" src="<?php echo asset_url();?>js/npm.js"></script>
   <script type="text/javascript" src="<?php echo asset_url();?>js/jquery.maskMoney.min.js"></script>
+  <script type="text/javascript" src="<?php echo asset_url();?>js/jscolor.js"></script>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/css/bootstrap-datetimepicker.min.css">
 
@@ -26,5 +27,14 @@
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-
+  <script>
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  });
+  </script>
+  <script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
+  </script>
 </head>

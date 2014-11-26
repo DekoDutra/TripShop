@@ -25,7 +25,6 @@ $(function(){
     $inputs = 'class="form-control"';
     $labels = array('class' => 'col-sm-2' );
     $submitbtn = 'class = "btn btn-primary btn-lg"';
-    $submitbtn2 = 'class = "btn btn-default btn-lg btn-novo-add"';
     echo form_open('admin/carros/novo', $attributes);
     ?><div class="form-group"><?
     echo form_label("Modelo: ", 'modelo', $labels);
@@ -34,14 +33,14 @@ $(function(){
     ?></div></div><div class="form-group"><?
     echo form_label("Cor: ", 'cor', $labels);
     ?><div class="col-sm-10"><?
-    echo form_input('cor', '', 'id="cor" class="form-control"');
+    echo form_input('cor', '', 'id="cor" class="color {hash:true} form-control"');
     ?></div></div><div class="form-group"><?
     echo form_label("Placa: ", 'placa', $labels);
     ?><div class="col-sm-10"><?
     echo form_input('placa', '', 'id="placa" class="form-control"');
     ?></div></div><div class="form-group"><div class="col-sm-offset-2 col-sm-10"><?
     echo "<br>";
-    echo form_submit("","Cancelar", $submitbtn2) . " " . form_submit("","Cadastrar", $submitbtn);
+    echo " " . form_submit("","Cadastrar", $submitbtn);
     ?></div><?
     echo form_close();
   ?>

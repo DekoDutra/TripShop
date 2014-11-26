@@ -76,7 +76,7 @@
 
   <div class="container-fluid">
   <blockquote>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    <p>Administração de todos os Vôos cadastrados!</p>
     <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
     <a href="/tripshop/adicionar/cadastrar_voo">Novo voo <span class="glyphicon glyphicon-plus"></span></a>
   </blockquote>
@@ -124,7 +124,7 @@
             ?><div class="form-group"><?
             echo form_label("Nº Vôo: ", 'numero_voo', $labels);
             ?><div class="col-sm-10"><?
-            echo form_input('numero_voo', '', 'id="numero_voo" class="form-control"');
+            echo form_number('numero_voo', '', 'id="numero_voo" class="form-control"');
             ?></div></div><div class="form-group"><?
             echo form_label("Data: ", 'data_voo', $labels);
             ?><div class="col-sm-10 input-group date datetimepickernew" id="datetimepicker3"><?
@@ -138,7 +138,7 @@
             </div></div><div class="form-group"><?
             echo form_label("Quantidade Passagens: ", 'qtd_passagens', $labels);
             ?><div class="col-sm-10"><?
-            echo form_input('qtd_passagens', '', 'id="qtd_passagens" class="form-control currency"');
+            echo form_number('qtd_passagens', '', 'id="qtd_passagens" class="form-control currency"');
             ?></div></div><div class="form-group"><?
             echo form_label("ID: ", 'id', $labels);
             ?><div class="col-sm-10"><?

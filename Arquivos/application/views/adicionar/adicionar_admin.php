@@ -58,7 +58,7 @@ $(function(){
     echo form_dropdown('ativo', $options2, 'large', 'class="form-control"');
     ?></div></div><div class="form-group"><div class="col-sm-offset-2 col-sm-10"><?
     echo "<br>";
-    echo form_submit("","Cancelar", $submitbtn2) . " " . form_submit("","Cadastrar", $submitbtn);
+    echo form_submit("","Cadastrar", $submitbtn);
     ?></div><?
     echo form_close();
   ?>

@@ -76,7 +76,7 @@
 
   <div class="container-fluid">
   <blockquote>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    <p>Administração de todos os Hotéis cadastrados!</p>
     <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
     <a href="/tripshop/adicionar/cadastrar_hotel">Novo hotel <span class="glyphicon glyphicon-plus"></span></a>
   </blockquote>

@@ -34,18 +34,18 @@ $(function(){
     ?></div></div><div class="form-group"><?
     echo form_label("Estrelas: ", 'estrelas', $labels);
     ?><div class="col-sm-10"><?
-    echo form_input('estrelas', '', 'id="estrelas" class="form-control"');
+    echo form_number('estrelas', '', 'id="estrelas" class="form-control"');
     ?></div></div><div class="form-group"><?
     echo form_label("Quartos: ", 'quartos', $labels);
     ?><div class="col-sm-10"><?
-    echo form_input('quartos', '', 'id="quartos" class="form-control"');
+    echo form_number('quartos', '', 'id="quartos" class="form-control"');
     ?></div></div><div class="form-group"><?
     echo form_label("Quartos Vagos: ", 'quartos_vagos', $labels);
     ?><div class="col-sm-10"><?
-    echo form_input('quartos_vagos', '', 'id="quartos_vagos" class="form-control"');
+    echo form_number('quartos_vagos', '', 'id="quartos_vagos" class="form-control"');
     ?></div></div><div class="form-group"><div class="col-sm-offset-2 col-sm-10"><?
     echo "<br>";
-    echo form_submit("","Cancelar", $submitbtn2) . " " . form_submit("","Cadastrar", $submitbtn);
+    echo form_submit("","Cadastrar", $submitbtn);
     ?></div><?
     echo form_close();
   ?>
